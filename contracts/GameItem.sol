@@ -5,9 +5,6 @@ import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721UR
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
-
-
-
 contract GameItem is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
@@ -26,13 +23,11 @@ contract GameItem is ERC721URIStorage, Ownable {
     }
 
     
-    function mintItem(address player, string memory tokenURI)
-        public
-        onlyOwner
-        returns (uint256)
-    {
+    function mintItem(address player, string memory tokenURI) public onlyOwner returns (uint256) {
+        //increate tokenId
         _tokenIds.increment();
         uint256 newItemId = _tokenIds.current();
+        //player call mint
         _mint(player, newItemId);
         _setTokenURI(newItemId, tokenURI);
         return newItemId;
