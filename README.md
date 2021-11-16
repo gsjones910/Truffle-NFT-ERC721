@@ -11,7 +11,7 @@ Upload some nft metadata to an api. I used IPFS.
 Place link to NFT Collection.json in contractURI method, under GameItem.sol. 
 Deploy the contracts with `truffle develop` then `migrate --network mumbai` in the terminal, then copy the contract address.
 Add your account address, contract address and token json link to the mint script.
-Enter `node scripts/mint.js` into the console to mint.
+Enter `node scripts/mint.js` into the console to mint
 
 
 This is inspired by opensea's tutorial: https://github.com/ProjectOpenSea/opensea-creatures and https://docs.openzeppelin.com/contracts/4.x/erc721
